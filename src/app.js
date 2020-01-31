@@ -13,6 +13,7 @@ app.post('/echo', (req, res) => {
   console.log('Body', JSON.stringify(req.body, null, 2));
   console.log('Querystring:', JSON.stringify(req.query, null, 2));
   console.log('authcode', req.query.authcode);
+  console.log('authcode2', req.query.authcode2);
   console.log('POST request complete');
   res.status(200).send('ok');
 });
