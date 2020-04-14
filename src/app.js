@@ -8,10 +8,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.all('/', (req, res) => {
+app.all('*', (req, res) => {
   const response = {
     header: req.headers,
     method: req.method,
+    base: req.baseUrl,
+    path: req.path,
+    params: req.params,
     body: req.body,
     querystring: req.query,
     protocal: req.protocol,
